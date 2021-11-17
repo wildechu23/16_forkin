@@ -7,10 +7,11 @@
 int main() {
     int cpid1, cpid2;
     srand(time(NULL));
-
+    
     printf("Parent pid: %d\n", getpid());
-
+    
     cpid1 = fork();
+
     if(cpid1) {
         cpid2 = fork();
         rand();
@@ -24,7 +25,7 @@ int main() {
         return 0;
     } else {
         printf("Child pid: %d\n", getpid());
-        int time = 2 + rand() % 3;
+        int time = 2 + (rand() % 4);
         sleep(time);
         printf("Child %d awake\n", getpid());
 
